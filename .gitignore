@@ -11,10 +11,6 @@
 # production
 /build
 
-keys.json
-keys.*
-**keys.**
-*keys.*
 
 # misc
 .DS_Store
