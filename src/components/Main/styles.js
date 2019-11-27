@@ -9,6 +9,8 @@ background: url(${background})  no-repeat center ;
 background-position: center;
 background-size: cover;
 display: flex;
+flex-direction: column;
+justify-content: space-between;
 
 
 &::before {
@@ -20,4 +22,12 @@ display: flex;
     top: 0;
     opacity: 0.3;
 }
+`
+
+
+export const AsideContainer = styled.div`
+display: flex;
+justify-content: space-between;
+
+
 `
