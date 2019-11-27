@@ -1,17 +1,13 @@
 import React from 'react';
 
+import { WiHumidity, WiThermometer, WiStrongWind } from 'react-icons/wi';
+
+import { MdBeachAccess } from 'react-icons/md';
 import { Container, Wrap } from './styles';
-
-import { WiHumidity } from "react-icons/wi";
-import { WiThermometer } from "react-icons/wi";
-import { WiStrongWind } from "react-icons/wi";
-
-import { MdBeachAccess } from "react-icons/md";
-
 
 export default function Aside() {
     return (
-        <Container >
+        <Container>
             <Wrap>
                 <WiHumidity />
                 <div>
@@ -36,11 +32,9 @@ export default function Aside() {
             <Wrap>
                 <MdBeachAccess />
                 <div>
-                    <p> heavy intensity rain
-                    </p>
+                    <p> heavy intensity rain</p>
                 </div>
             </Wrap>
-        </Container >
-    )
+        </Container>
+    );
 }
-

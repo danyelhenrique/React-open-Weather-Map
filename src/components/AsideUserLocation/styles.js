@@ -1,32 +1,27 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
-background: transparent;
-height: 370px;
-width: 300px;
+    background: transparent;
+    height: 370px;
+    width: 300px;
 
-display: flex;
-flex-direction: column;
-padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
 
     svg {
         height: 50px;
         width: 50px;
-        color :	#ffff;
+        color: #ffff;
         background: transparent;
     }
-
-   
-
 `;
 
-
 export const Country = styled.div`
-        color :	#ffff;
+    color: #ffff;
 
     h5 {
-        color :	#ffff;
+        color: #ffff;
         font-size: 1.8rem;
         font-weight: bold;
     }
@@ -34,14 +29,14 @@ export const Country = styled.div`
     small {
         font-size: 0.8rem;
     }
-`
+`;
 
 export const Temperature = styled.div`
     display: flex;
     align-items: center;
 
     strong {
-        color :	#ffff;
+        color: #ffff;
         font-weight: bold;
         font-size: 1.8rem;
     }
@@ -49,33 +44,31 @@ export const Temperature = styled.div`
     svg {
         height: 50px;
         width: 50px;
-        color :	#ffff;
+        color: #ffff;
 
         background: transparent;
-        stroke-width: 0.8
+        stroke-width: 0.8;
     }
-`
+`;
 export const ChangeLocal = styled.div`
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
 
-button {
+    button {
         cursor: pointer;
         z-index: 100;
         border: none;
         background: transparent;
-      
-         svg {
 
+        svg {
             width: 30px;
             height: 30px;
-            color :	#86051a;
+            color: #86051a;
             background: transparent;
-
-        } 
+        }
     }
 
     p {
-            color: rgba(0,0,0,0.5);
-        }
+        color: rgba(0, 0, 0, 0.5);
+    }
 `;

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { geoLocalization } from '../../services/api'
+import { geoLocalization } from '../../services/api';
 
-import { MainContainer, AsideContainer } from './styles';
+import { MainContainer, AsideContainer, SearchContainer } from './styles';
 
-import AsideDetails from '../AsideDetails'
-import AsideUserLocation from '../AsideUserLocation'
+import AsideDetails from '../AsideDetails';
+import AsideUserLocation from '../AsideUserLocation';
 
+import WeatherWeek from '../WeatherWeek';
 
-import WeatherWeek from '../WeatherWeek'
-
+import Search from '../Search';
 
 export default function Main() {
-    const [data, setData] = useState()
+    const [data, setData] = useState();
 
     useEffect(() => {
         // function x() {
@@ -20,15 +20,17 @@ export default function Main() {
         //         const longitude = positon.coords.longitude
         //         const y = await geoLocalization(latitude, longitude)
         //         console.log(y);
-
         //     })
         // }
         // x()
-    }, [])
+    }, []);
     return (
-        <MainContainer >
+        <MainContainer>
             <AsideContainer>
                 <AsideUserLocation />
+                <SearchContainer>
+                    <Search />
+                </SearchContainer>
                 <AsideDetails />
             </AsideContainer>
             <WeatherWeek />

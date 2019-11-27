@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { WiCloudyWindy } from "react-icons/wi";
-import { WiCelsius } from "react-icons/wi";
+import { WiCloudyWindy, WiCelsius } from 'react-icons/wi';
 
-import { MdLocationOn } from "react-icons/md";
-
+import { MdLocationOn } from 'react-icons/md';
 
 import { Container, Country, Temperature, ChangeLocal } from './styles';
 
@@ -18,21 +16,16 @@ export default function AsideUserLocation() {
             </Country>
 
             <Temperature>
-                <strong>
-                    28
-                </strong>
+                <strong>28</strong>
                 <WiCelsius />
             </Temperature>
 
             <ChangeLocal>
-
-                <button type="button" onClick={_ => console.log("Oi")}>
+                <button type="button" onClick={_ => console.log('Oi')}>
                     <MdLocationOn />
                 </button>
                 <p>Change Location</p>
             </ChangeLocal>
-
-
         </Container>
     );
 }
