@@ -11,6 +11,7 @@ export const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 
     &::before {
         content: '';
@@ -32,11 +33,6 @@ export const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
     width: 100%;
 
-    /* margin: auto auto; */
-    /* height: 100vh; */
-
-    /* width: 50%; */
 `;
