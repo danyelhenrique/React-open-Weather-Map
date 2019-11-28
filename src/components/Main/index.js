@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { geoLocalization } from '../../services/api';
+import React from 'react';
 
 import { ApiProviders } from '../../providers';
 
@@ -13,19 +12,6 @@ import WeatherWeek from '../WeatherWeek';
 import Search from '../Search';
 
 export default function Main() {
-    const [data, setData] = useState();
-
-    useEffect(() => {
-        // function x() {
-        //     navigator.geolocation.getCurrentPosition(async positon => {
-        //         const latitude = positon.coords.latitude
-        //         const longitude = positon.coords.longitude
-        //         const y = await geoLocalization(latitude, longitude)
-        //         console.log(y);
-        //     })
-        // }
-        // x()
-    }, []);
     return (
         <ApiProviders>
             <MainContainer>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { WiCelsius } from 'react-icons/wi';
 import { Container, MinMax } from './styles';
 
 export default function WeatherDaily() {
