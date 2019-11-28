@@ -6,9 +6,13 @@ import { Animated } from 'react-animated-css';
 
 import { Container, Country, Temperature } from './styles';
 
-export default function AsideUserLocation() {
+export default function AsideUserLocation({ delay }) {
     return (
-        <Animated animationIn="slideInLeft" animationOut="bounce">
+        <Animated
+            animationIn="slideInLeft"
+            animationOut="bounce"
+            animationInDelay={delay}
+        >
             <Container>
                 <WiCloudyWindy />
                 <Country>
@@ -25,3 +29,4 @@ export default function AsideUserLocation() {
 
     );
 }
+

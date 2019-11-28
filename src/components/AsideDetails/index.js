@@ -8,9 +8,13 @@ import { Animated } from 'react-animated-css';
 import { MdBeachAccess } from 'react-icons/md';
 import { Container, Wrap } from './styles';
 
-export default function Aside() {
+export default function Aside({ delay }) {
     return (
-        <Animated animationIn="slideInRight" animationOut="bounce">
+        <Animated
+            animationIn="slideInRight"
+            animationOut="bounce"
+            animationInDelay={delay}
+        >
 
             <Container>
                 <Wrap>

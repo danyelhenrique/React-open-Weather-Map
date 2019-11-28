@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { geoLocalization } from '../../services/api';
 
+import { ApiProviders } from '../../providers';
+
 import { MainContainer, AsideContainer, SearchContainer } from './styles';
 
 import AsideDetails from '../AsideDetails';
@@ -25,15 +27,17 @@ export default function Main() {
         // x()
     }, []);
     return (
-        <MainContainer>
-            <AsideContainer>
-                <AsideUserLocation />
-                <SearchContainer>
-                    <Search />
-                </SearchContainer>
-                <AsideDetails />
-            </AsideContainer>
-            <WeatherWeek />
-        </MainContainer>
+        <ApiProviders>
+            <MainContainer>
+                <AsideContainer>
+                    <AsideUserLocation delay={1000} />
+                    <SearchContainer>
+                        <Search />
+                    </SearchContainer>
+                    <AsideDetails delay={1200} />
+                </AsideContainer>
+                <WeatherWeek delay={1400} />
+            </MainContainer>
+        </ApiProviders>
     );
 }

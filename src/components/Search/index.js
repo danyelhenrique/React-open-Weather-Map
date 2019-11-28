@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import { MdSearch, MdLocationOn } from 'react-icons/md';
 
 import { Container, ChangeLocal } from './styles';
 
+import { ApiContex } from '../../providers';
 
 export default function Search() {
-    const [s, set] = useState();
+    const a = useContext(ApiContex)
 
-    const x = e => {
-        set(e);
-    };
+    console.log(a);
     return (
         <Container>
             <ChangeLocal>
@@ -23,7 +22,6 @@ export default function Search() {
                 <input
                     type="text"
                     id="input"
-                    onChange={e => x(e)}
                     placeholder="Search City"
                 />
                 <button type="button"><MdSearch /></button>
