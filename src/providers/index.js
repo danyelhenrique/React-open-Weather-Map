@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export const ApiContex = createContext();
 
 export function ApiProviders({ children }) {
-    const [state, setState] = useState({ num: 1 });
+    const [state, setState] = useState();
 
     return (
         <ApiContex.Provider value={[state, setState]}>

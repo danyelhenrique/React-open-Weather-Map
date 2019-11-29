@@ -9,8 +9,7 @@ import { ApiContex } from '../../providers';
 export default function Search() {
     const a = useContext(ApiContex);
 
-    
-    console.log(a);
+    // console.log(a);
     return (
         <Container>
             <ChangeLocal>

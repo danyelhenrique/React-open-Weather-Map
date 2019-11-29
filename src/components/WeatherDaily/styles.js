@@ -22,7 +22,6 @@ export const Container = styled.div`
 
     @media ${devicesMax.laptop} {
         margin: 30px;
-
     }
 
     h4 {

@@ -42,7 +42,6 @@ export const Wrap = styled.div`
         font-weight: 500;
         text-align: left;
 
-
         small {
             font-weight: 400;
         }

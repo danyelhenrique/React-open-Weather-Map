@@ -2,20 +2,20 @@ import React from 'react';
 
 import { Container, MinMax } from './styles';
 
-export default function WeatherDaily() {
+export default function WeatherDaily({ max, min, tempDay, day }) {
     return (
         <Container>
-            <h4>Wed Nov 27</h4>
+            <h4>{day}</h4>
             <div>
                 <strong>
-                    <span>28°C</span>
+                    <span>{tempDay}°C</span>
                 </strong>
                 <MinMax>
                     <span>
-                        Min<p>28</p>
+                        Min<p>{min}</p>
                     </span>
                     <span>
-                        Max<p>28</p>
+                        Max<p>{max}</p>
                     </span>
                 </MinMax>
             </div>

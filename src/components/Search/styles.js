@@ -20,10 +20,8 @@ export const InputSearch = styled.div`
     align-items: center;
 
     @media ${devicesMax.laptop} {
-
         width: 100%;
     }
-
 
     input {
         font-family: 'roboto';
@@ -60,7 +58,7 @@ export const InputSearch = styled.div`
         justify-content: center;
 
         @media ${devicesMax.laptop} {
-        width: 20%;
+            width: 20%;
         }
 
         svg {
