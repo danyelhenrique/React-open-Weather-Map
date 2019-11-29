@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
+import { devicesMax } from '../../Global/breakPoints';
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* TROCAR HEIGHT */
-    height: 90%;
+    height: 205px;
     width: 176px;
     background: transparent;
     color: #fff;
@@ -18,6 +19,11 @@ export const Container = styled.div`
         1px 1px 1px 1px rgba(0, 0, 0, 0.75);
 
     background: rgba(0, 0, 0, 0.2);
+
+    @media ${devicesMax.laptop} {
+        margin: 30px;
+
+    }
 
     h4 {
         color: #fff;

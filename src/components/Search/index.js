@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 
 import { MdSearch, MdLocationOn } from 'react-icons/md';
 
-import { Container, ChangeLocal } from './styles';
+import { Container, ChangeLocal, InputSearch } from './styles';
 
 import { ApiContex } from '../../providers';
 
 export default function Search() {
-    const a = useContext(ApiContex)
+    const a = useContext(ApiContex);
 
+    
     console.log(a);
     return (
         <Container>
@@ -18,14 +19,12 @@ export default function Search() {
                 </button>
                 <p>Change Location</p>
             </ChangeLocal>
-            <div>
-                <input
-                    type="text"
-                    id="input"
-                    placeholder="Search City"
-                />
-                <button type="button"><MdSearch /></button>
-            </div>
+            <InputSearch>
+                <input type="text" id="input" placeholder="Search City" />
+                <button type="button">
+                    <MdSearch />
+                </button>
+            </InputSearch>
         </Container>
     );
 }

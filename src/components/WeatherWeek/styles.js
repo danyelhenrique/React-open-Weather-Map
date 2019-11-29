@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+import { devicesMax } from '../../Global/breakPoints';
+
 export const Container = styled.div`
-    height: 100%;
-    width: 100%;
-    background: transparent;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    overflow: hidden;
+    /* overflow: hidden; */
+    flex: 1;
+
+    @media ${devicesMax.laptop} {
+    }
 `;

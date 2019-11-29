@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { devicesMax, devicesMin } from '../../Global/breakPoints';
+
 export const Container = styled.div`
     background: transparent;
     height: 370px;
@@ -9,6 +11,14 @@ export const Container = styled.div`
     text-overflow: ellipsis;
     align-items: center;
     justify-content: center;
+
+    @media ${devicesMax.laptop} {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        height: 250px;
+        justify-content: space-evenly;
+    }
 `;
 
 export const Wrap = styled.div`
@@ -18,6 +28,12 @@ export const Wrap = styled.div`
     width: 100%;
     height: 100%;
 
+    @media ${devicesMax.laptop} {
+        display: flex;
+        padding-left: 30px;
+        height: auto;
+    }
+
     div {
         display: flex;
         flex-direction: column;
@@ -25,6 +41,7 @@ export const Wrap = styled.div`
         color: #fff;
         font-weight: 500;
         text-align: left;
+
 
         small {
             font-weight: 400;

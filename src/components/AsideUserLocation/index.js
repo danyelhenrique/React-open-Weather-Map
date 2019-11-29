@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropType from 'prop-types';
+
 import { WiCloudyWindy } from 'react-icons/wi';
 
 import { Animated } from 'react-animated-css';
@@ -23,10 +25,11 @@ export default function AsideUserLocation({ delay }) {
                 <Temperature>
                     <strong>28°C</strong>
                 </Temperature>
-
             </Container>
         </Animated>
-
     );
 }
 
+AsideUserLocation.propTypes = {
+    delay: PropType.number.isRequired,
+};

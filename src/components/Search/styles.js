@@ -1,18 +1,29 @@
 import styled from 'styled-components';
+import { devicesMax } from '../../Global/breakPoints';
 
 export const Container = styled.div`
     z-index: 99;
     width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
-    div {
-        display: flex;
-        width: 90%;
-        align-items: center;
+    @media ${devicesMax.laptop} {
+        width: 100%;
     }
+`;
+
+export const InputSearch = styled.div`
+    display: flex;
+    width: 90%;
+    align-items: center;
+
+    @media ${devicesMax.laptop} {
+
+        width: 100%;
+    }
+
 
     input {
         font-family: 'roboto';
@@ -48,6 +59,10 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
 
+        @media ${devicesMax.laptop} {
+        width: 20%;
+        }
+
         svg {
             height: 20px;
             width: 20px;
@@ -65,7 +80,6 @@ export const ChangeLocal = styled.div`
         z-index: 100;
         border: none;
         background: transparent;
-
 
         svg {
             width: 30px;

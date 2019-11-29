@@ -1,4 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { max } from './breakPoints';
+import background from '../assets/12.jpg';
 
 export default createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
@@ -13,8 +15,9 @@ html,
 body,
 #root {
    height: 100vh;
-   color: #fff; 
+   color: #fff;
    font-family: "Roboto", sans-serif, Arial, Helvetica, sans-serif;
+
 
 }
 `;
@@ -22,8 +25,10 @@ body,
 export const Container = styled.div`
     height: 100%;
     width: 100%;
+    /* min-width: 675px; */
     font-size: 1rem;
     color: #000;
+
 
     h1,
     h2,

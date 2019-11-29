@@ -1,10 +1,21 @@
 import styled from 'styled-components';
 
+import { devicesMax } from '../../Global/breakPoints';
+
+
 export const Container = styled.div`
     background: transparent;
     height: 370px;
     width: 300px;
     line-height: 40px;
+
+    @media ${devicesMax.laptop} {
+        height: 110px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    };
+
 
     display: flex;
     flex-direction: column;
@@ -35,6 +46,10 @@ export const Country = styled.div`
 export const Temperature = styled.div`
     display: flex;
     align-items: center;
+
+    @media ${devicesMax.laptop} {
+        align-items: flex-start;
+    };
 
     strong {
         color: #ffff;
