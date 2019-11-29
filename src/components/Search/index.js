@@ -1,15 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { MdSearch, MdLocationOn } from 'react-icons/md';
+import { Search as SearchApi } from '../../services/api';
 
-import { Container, ChangeLocal, InputSearch } from './styles';
+import { Container, ChangeLocal, InputSearch, FailToGetData } from './styles';
 
 import { ApiContex } from '../../providers';
 
 export default function Search() {
-    const a = useContext(ApiContex);
+    const [city, setCity] = useState('');
+    const [erro, setErro] = useState(false);
+    const [, setState] = useContext(ApiContex);
 
-    // console.log(a);
+    async function searchCity() {
+        try {
+            const getCity = await SearchApi(city);
+            const data = await getCity;
+            if (data.status === 200) {
+                setState(data.data);
+                setErro(false);
+            }
+        } catch (error) {
+            setErro(true);
+        } finally {
+            setCity('');
+        }
+    }
     return (
         <Container>
             <ChangeLocal>
@@ -19,11 +35,22 @@ export default function Search() {
                 <p>Change Location</p>
             </ChangeLocal>
             <InputSearch>
-                <input type="text" id="input" placeholder="Search City" />
-                <button type="button">
+                <input
+                    type="text"
+                    id="input"
+                    value={city}
+                    placeholder="Search City"
+                    onChange={e => setCity(e.target.value)}
+                />
+                <button type="button" onClick={() => searchCity()}>
                     <MdSearch />
                 </button>
             </InputSearch>
+            {erro && (
+                <FailToGetData>
+                    <p>Please check if name of city is correct.</p>
+                </FailToGetData>
+            )}
         </Container>
     );
 }

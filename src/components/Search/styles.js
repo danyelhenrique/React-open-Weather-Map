@@ -91,3 +91,13 @@ export const ChangeLocal = styled.div`
         color: rgba(0, 0, 0, 0.5);
     }
 `;
+
+export const FailToGetData = styled.div`
+    display: flex;
+    font-weight: 400;
+    font-size: 0.8rem;
+
+    p {
+        color: #56050a;
+    }
+`;
