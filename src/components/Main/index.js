@@ -18,7 +18,7 @@ export default function Main() {
     async function err() {
         const { data } = await defaultLocalization();
         setState(data);
-    };
+    }
 
     async function success(positon) {
         const { latitude, longitude } = positon.coords;
@@ -31,8 +31,8 @@ export default function Main() {
             navigator.geolocation.getCurrentPosition(success, err);
         }
         getGeoLocalization();
+        // eslint-disable-next-line
     }, []);
-
 
     return (
         <MainContainer>

@@ -5,7 +5,7 @@ import { LoadingContainer } from './styles';
 
 export default function Loading() {
     return (
-        <LoadingContainer >
+        <LoadingContainer>
             <FaSpinner />
         </LoadingContainer>
     );

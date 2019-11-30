@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropType from 'prop-types';
+
 import { Container, MinMax } from './styles';
 
 export default function WeatherDaily({ max, min, tempDay, day }) {
@@ -22,3 +24,10 @@ export default function WeatherDaily({ max, min, tempDay, day }) {
         </Container>
     );
 }
+
+WeatherDaily.propTypes = {
+    max: PropType.number.isRequired,
+    min: PropType.number.isRequired,
+    tempDay: PropType.number.isRequired,
+    day: PropType.number.isRequired,
+};

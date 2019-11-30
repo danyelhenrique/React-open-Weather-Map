@@ -32,13 +32,11 @@ export const InputSearch = styled.div`
     }
 `;
 
-export const Input = styled.input.attrs(props => ({
+export const Input = styled.input.attrs({
     type: 'text',
     autoComplete: 'off',
-    autoCorrect: true,
     placeholder: 'Search City',
-    disabled: props.loading,
-}))`
+})`
     font-family: 'Roboto';
     height: 40px;
     width: 90%;
@@ -59,15 +57,10 @@ export const Input = styled.input.attrs(props => ({
         font-weight: 500;
         font-size: 0.8rem;
     }
-
-    &[disabled] {
-        cursor: not-allowed;
-        opacity: 0.6;
-    }
 `;
 
 export const Button = styled.button.attrs(props => ({
-    disabled: props.loading,
+    disabled: props.load,
 }))`
     border-radius: 0px 25px 25px 0px;
     border: 0;
@@ -96,7 +89,7 @@ export const Button = styled.button.attrs(props => ({
     }
 
     ${props =>
-        props.loading &&
+        props.load &&
         css`
             svg {
                 animation: ${rotate} 2s linear infinite;

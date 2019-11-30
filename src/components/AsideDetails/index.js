@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import PropType from 'prop-types';
 
 import { WiHumidity, WiThermometer, WiStrongWind } from 'react-icons/wi';
@@ -16,11 +16,9 @@ import Loading from '../Loading';
 export default function Aside({ delay }) {
     const [state] = useContext(ApiContex);
 
-    function render() {
+    const render = useCallback(() => {
         if (!state) {
-            return (
-                <Loading />
-            )
+            return <Loading />;
         }
         const { humidity, pressure, speed, weather } = state.list[0];
 
@@ -63,7 +61,8 @@ export default function Aside({ delay }) {
                 </Container>
             </Animated>
         );
-    }
+        // eslint-disable-next-line
+    }, [state]);
     return <>{render()}</>;
 }
 

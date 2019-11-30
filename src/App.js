@@ -1,5 +1,4 @@
-import React, { useEffect, useContext } from 'react';
-import { geoLocalization } from './services/api';
+import React from 'react';
 import GlobalStyle, { Container } from './Global/styles';
 
 import MainContainer from './components/Main';

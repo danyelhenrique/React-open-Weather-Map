@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 
 import { Animated } from 'react-animated-css';
 
@@ -12,15 +12,12 @@ import { Container, Country, Temperature } from './styles';
 
 import Loading from '../Loading';
 
-
 export default function AsideUserLocation({ delay }) {
     const [state] = useContext(ApiContex);
 
-    function render() {
+    const render = useCallback(() => {
         if (!state) {
-            return (
-                <Loading />
-            );
+            return <Loading />;
         }
         const degre = state.list[0].temp.day;
         return (
@@ -42,7 +39,8 @@ export default function AsideUserLocation({ delay }) {
                 </Container>
             </Animated>
         );
-    }
+        // eslint-disable-next-line
+    }, [state]);
 
     return <>{render()}</>;
 }

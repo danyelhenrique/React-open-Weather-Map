@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import PropType from 'prop-types';
 
 import { Animated } from 'react-animated-css';
@@ -14,7 +14,7 @@ import WeatherDaily from '../WeatherDaily';
 export default function WeatherWeek({ delay }) {
     const [state] = useContext(ApiContex);
 
-    function formatDate(date) {
+    function formatTemp(date) {
         const { max, min, day } = date.temp;
         const formatedTempMax = Math.round(max);
         const formatedTempMin = Math.round(min);
@@ -33,7 +33,7 @@ export default function WeatherWeek({ delay }) {
         return date;
     }
 
-    function RenderWeather() {
+    const RenderWeather = useCallback(() => {
         if (!state) {
             return <Loading />;
         }
@@ -42,7 +42,7 @@ export default function WeatherWeek({ delay }) {
                 formatedTempMax,
                 formatedTempMin,
                 formatedTempDay,
-            } = formatDate(date);
+            } = formatTemp(date);
             const day = formateDate(date.dt);
             return (
                 <WeatherDaily
@@ -54,7 +54,7 @@ export default function WeatherWeek({ delay }) {
                 />
             );
         });
-    }
+    }, [state]);
 
     return (
         <Animated

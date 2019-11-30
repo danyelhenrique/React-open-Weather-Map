@@ -4,7 +4,14 @@ import { MdSearch, MdLocationOn } from 'react-icons/md';
 import { FaSpinner } from 'react-icons/fa';
 import { Search as SearchApi } from '../../services/api';
 
-import { Container, ChangeLocal, InputSearch, Input, Button, FailToGetData } from './styles';
+import {
+    Container,
+    ChangeLocal,
+    InputSearch,
+    Input,
+    Button,
+    FailToGetData,
+} from './styles';
 
 import { ApiContex } from '../../providers';
 
@@ -30,6 +37,12 @@ export default function Search() {
             setLoading(false);
         }
     }
+
+    function keyPress(e) {
+        if (e.key === 'Enter') {
+            searchCity();
+        }
+    }
     return (
         <Container>
             <ChangeLocal>
@@ -38,14 +51,14 @@ export default function Search() {
                 </button>
                 <p>Change Location</p>
             </ChangeLocal>
-            <InputSearch >
+            <InputSearch>
                 <Input
                     id="input"
                     value={city}
                     onChange={e => setCity(e.target.value)}
-                    loading={loading}
+                    onKeyPress={keyPress}
                 />
-                <Button type="button" onClick={() => searchCity()} loading={loading}>
+                <Button type="button" onClick={searchCity} load={loading}>
                     {loading ? <FaSpinner /> : <MdSearch />}
                 </Button>
             </InputSearch>

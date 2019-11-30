@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 import { devicesMax } from '../../Global/breakPoints';
 
 export const Container = styled.div`
@@ -32,7 +31,6 @@ export const Container = styled.div`
     }
 `;
 
-
 export const Country = styled.div`
     color: #ffff;
 
@@ -51,7 +49,7 @@ export const Country = styled.div`
     small {
         font-size: 0.9rem;
 
-        @media ${devicesMax.laptop}{
+        @media ${devicesMax.laptop} {
             margin: 0 10px;
         }
     }
