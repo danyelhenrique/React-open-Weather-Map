@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 
 import { ApiContex } from '../../providers';
-import { geoLocalization } from '../../services/api';
+import { geoLocalization, defaultLocalization } from '../../services/api';
 
 import { MainContainer, AsideContainer, SearchContainer } from './styles';
 
@@ -15,16 +15,24 @@ import Search from '../Search';
 export default function Main() {
     const [, setState] = useContext(ApiContex);
 
+    async function err() {
+        const { data } = await defaultLocalization();
+        setState(data);
+    };
+
+    async function success(positon) {
+        const { latitude, longitude } = positon.coords;
+        const { data } = await geoLocalization(latitude, longitude);
+        setState(data);
+    }
+
     useEffect(() => {
-        async function getGeoLocalization() {
-            navigator.geolocation.getCurrentPosition(async positon => {
-                const { latitude, longitude } = positon.coords;
-                const { data } = await geoLocalization(latitude, longitude);
-                setState(data);
-            });
+        function getGeoLocalization() {
+            navigator.geolocation.getCurrentPosition(success, err);
         }
         getGeoLocalization();
     }, []);
+
 
     return (
         <MainContainer>

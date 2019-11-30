@@ -18,4 +18,11 @@ export const Search = input => {
     return api.get();
 };
 
+export const defaultLocalization = () => {
+    const api = axios.create({
+        baseURL: `https://api.openweathermap.org/data/2.5/forecast/daily?q=rio+de+janeiro&units=metric&cnt=7&appid=ebf5e5843530b4f8cf4c0bd17b6b6048`,
+    });
+    return api.get();
+};
+
 // export default api
