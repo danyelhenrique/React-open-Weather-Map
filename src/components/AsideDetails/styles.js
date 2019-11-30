@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import { devicesMax, devicesMin } from '../../Global/breakPoints';
+
+import { devicesMax } from '../../Global/breakPoints';
 
 export const Container = styled.div`
     background: transparent;

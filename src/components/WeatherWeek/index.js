@@ -3,6 +3,8 @@ import PropType from 'prop-types';
 
 import { Animated } from 'react-animated-css';
 
+import Loading from '../Loading';
+
 import { ApiContex } from '../../providers';
 
 import { Container } from './styles';
@@ -33,7 +35,7 @@ export default function WeatherWeek({ delay }) {
 
     function RenderWeather() {
         if (!state) {
-            return <h1>Loading</h1>;
+            return <Loading />;
         }
         return state.list.map(date => {
             const {

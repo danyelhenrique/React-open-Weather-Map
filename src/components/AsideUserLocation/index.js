@@ -10,12 +10,17 @@ import { ApiContex } from '../../providers';
 
 import { Container, Country, Temperature } from './styles';
 
+import Loading from '../Loading';
+
+
 export default function AsideUserLocation({ delay }) {
     const [state] = useContext(ApiContex);
 
     function render() {
         if (!state) {
-            return <h1>Loading</h1>;
+            return (
+                <Loading />
+            );
         }
         const degre = state.list[0].temp.day;
         return (

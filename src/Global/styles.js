@@ -15,8 +15,6 @@ body,
    height: 100vh;
    color: #fff;
    font-family: "Roboto", sans-serif, Arial, Helvetica, sans-serif;
-
-
 }
 `;
 
@@ -38,8 +36,6 @@ export const Container = styled.div`
     button,
     p {
         margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif, Arial, Helvetica, sans-serif;
         color: #000;
     }
 `;

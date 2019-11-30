@@ -6,16 +6,21 @@ import { WiHumidity, WiThermometer, WiStrongWind } from 'react-icons/wi';
 import { Animated } from 'react-animated-css';
 
 import { MdBeachAccess } from 'react-icons/md';
+
 import { ApiContex } from '../../providers';
 
 import { Container, Wrap } from './styles';
+
+import Loading from '../Loading';
 
 export default function Aside({ delay }) {
     const [state] = useContext(ApiContex);
 
     function render() {
         if (!state) {
-            return <h1>Loading</h1>;
+            return (
+                <Loading />
+            )
         }
         const { humidity, pressure, speed, weather } = state.list[0];
 

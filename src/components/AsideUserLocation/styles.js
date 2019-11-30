@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 import { devicesMax } from '../../Global/breakPoints';
 
 export const Container = styled.div`
@@ -12,7 +13,11 @@ export const Container = styled.div`
         height: 110px;
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
+        align-items: center;
+
+        margin-top: 10px;
+
+        width: 100%;
     }
 
     display: flex;
@@ -27,8 +32,15 @@ export const Container = styled.div`
     }
 `;
 
+
 export const Country = styled.div`
     color: #ffff;
+
+    @media ${devicesMax.laptop} {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
 
     h5 {
         color: #ffff;
@@ -38,6 +50,10 @@ export const Country = styled.div`
 
     small {
         font-size: 0.9rem;
+
+        @media ${devicesMax.laptop}{
+            margin: 0 10px;
+        }
     }
 `;
 

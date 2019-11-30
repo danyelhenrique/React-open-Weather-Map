@@ -1,19 +1,22 @@
 import React, { useContext, useState } from 'react';
 
 import { MdSearch, MdLocationOn } from 'react-icons/md';
+import { FaSpinner } from 'react-icons/fa';
 import { Search as SearchApi } from '../../services/api';
 
-import { Container, ChangeLocal, InputSearch, FailToGetData } from './styles';
+import { Container, ChangeLocal, InputSearch, Input, Button, FailToGetData } from './styles';
 
 import { ApiContex } from '../../providers';
 
 export default function Search() {
     const [city, setCity] = useState('');
     const [erro, setErro] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [, setState] = useContext(ApiContex);
 
     async function searchCity() {
         try {
+            setLoading(true);
             const getCity = await SearchApi(city);
             const data = await getCity;
             if (data.status === 200) {
@@ -24,6 +27,7 @@ export default function Search() {
             setErro(true);
         } finally {
             setCity('');
+            setLoading(false);
         }
     }
     return (
@@ -34,17 +38,16 @@ export default function Search() {
                 </button>
                 <p>Change Location</p>
             </ChangeLocal>
-            <InputSearch>
-                <input
-                    type="text"
+            <InputSearch >
+                <Input
                     id="input"
                     value={city}
-                    placeholder="Search City"
                     onChange={e => setCity(e.target.value)}
+                    loading={loading}
                 />
-                <button type="button" onClick={() => searchCity()}>
-                    <MdSearch />
-                </button>
+                <Button type="button" onClick={() => searchCity()} loading={loading}>
+                    {loading ? <FaSpinner /> : <MdSearch />}
+                </Button>
             </InputSearch>
             {erro && (
                 <FailToGetData>
